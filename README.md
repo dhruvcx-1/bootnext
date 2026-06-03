@@ -123,7 +123,67 @@ No "why is my machine always booting Windows now?" moments.
 
 ---
 
-# 📦 Installation
+## ⚡ Quick Install
+
+### Using curl
+
+```bash
+mkdir -p ~/.bootnext && \
+curl -fsSL https://raw.githubusercontent.com/dhruvcx-1/bootnext/main/bootnext \
+-o ~/.bootnext/bootnext && \
+chmod +x ~/.bootnext/bootnext && \
+~/.bootnext/bootnext --install
+```
+
+### Using wget
+
+```bash
+mkdir -p ~/.bootnext && \
+wget -qO ~/.bootnext/bootnext \
+https://raw.githubusercontent.com/dhruvcx-1/bootnext/main/bootnext && \
+chmod +x ~/.bootnext/bootnext && \
+~/.bootnext/bootnext --install
+```
+
+### What does this do?
+
+The installer:
+
+* Creates a dedicated directory at `~/.bootnext`
+* Downloads the latest version of `bootnext`
+* Makes the script executable
+* Runs the built-in installer
+* Creates a system-wide `bootnext` command
+
+After installation:
+
+```bash
+bootnext --help
+```
+
+### Updating
+
+Run the same install command again:
+
+```bash
+mkdir -p ~/.bootnext && \
+curl -fsSL https://raw.githubusercontent.com/dhruvcx-1/bootnext/main/bootnext \
+-o ~/.bootnext/bootnext && \
+chmod +x ~/.bootnext/bootnext && \
+~/.bootnext/bootnext --install
+```
+
+### Uninstalling
+
+```bash
+bootnext --uninstall
+rm -rf ~/.bootnext
+```
+
+This removes both the installed command and the downloaded files.
+
+
+# 📦 Installation --Manual
 
 Clone the repository:
 
