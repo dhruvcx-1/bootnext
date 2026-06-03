@@ -177,6 +177,9 @@ ${BLUE}EXAMPLES${NC}
 
   ${YELLOW}# Install bootnext system-wide${NC}
   ./bootnext --install
+  
+  ${YELLOW}# Uninstall bootnext system-wide${NC}
+  ./bootnext --Uninstall
 
 ${BLUE}NOTES${NC}
 
