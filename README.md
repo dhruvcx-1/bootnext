@@ -177,7 +177,6 @@ chmod +x ~/.bootnext/bootnext && \
 
 ```bash
 bootnext --uninstall
-rm -rf ~/.bootnext
 ```
 
 This removes both the installed command and the downloaded files.
