@@ -134,7 +134,12 @@ curl -fsSL https://raw.githubusercontent.com/dhruvcx-1/bootnext/main/bootnext \
 chmod +x ~/.bootnext/bootnext && \
 ~/.bootnext/bootnext --install
 ```
+or
 
+```
+mkdir -p ~/.bootnext && curl -fsSL https://raw.githubusercontent.com/dhruvcx-1/bootnext/main/bootnext -o ~/.bootnext/bootnext && chmod +x ~/.bootnext/bootnext && ~/.bootnext/bootnext --install
+
+```
 ### Using wget
 
 ```bash
@@ -144,7 +149,12 @@ https://raw.githubusercontent.com/dhruvcx-1/bootnext/main/bootnext && \
 chmod +x ~/.bootnext/bootnext && \
 ~/.bootnext/bootnext --install
 ```
+or
 
+```
+mkdir -p ~/.bootnext && wget -qO ~/.bootnext/bootnext https://raw.githubusercontent.com/dhruvcx-1/bootnext/main/bootnext && chmod +x ~/.bootnext/bootnext && ~/.bootnext/bootnext --install
+
+```
 ### What does this do?
 
 The installer:
