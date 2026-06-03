@@ -9,7 +9,9 @@ BOLD=$(printf '\033[1m')
 DIM=$(printf '\033[2m')
 NC=$(printf '\033[0m')
 
-CONFIG_FILE="$HOME/.config/reboot-next.conf"
+CONFIG_FILE="$HOME/.bootnext/reboot-next.conf"
+INSTALL_DIR="$HOME/.bootnext"
+
 
 mkdir -p "$(dirname "$CONFIG_FILE")"
 
@@ -85,16 +87,30 @@ install_self() {
 uninstall_self() {
     local target="/usr/local/bin/bootnext"
 
-    if [[ ! -L "$target" && ! -f "$target" ]]; then
-        echo "bootnext is not installed."
-        exit 1
+
+    echo "Uninstalling bootnext..."
+    echo
+
+    # Remove symlink/binary
+    if [[ -L "$target" || -f "$target" ]]; then
+        echo "Removing command..."
+        sudo rm -f "$target"
     fi
 
-    echo "Removing bootnext..."
-    sudo rm -f "$target"
+    # Remove config
+    if [[ -f "$config_file" ]]; then
+        echo "Removing configuration..."
+        rm -f "$config_file"
+    fi
+
+    # Remove downloaded installation
+    if [[ -d "$install_dir" ]]; then
+        echo "Removing installation directory..."
+        rm -rf "$install_dir"
+    fi
 
     echo
-    echo "bootnext has been uninstalled."
+    echo "✓ bootnext has been completely uninstalled."
 }
 
 
